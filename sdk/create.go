@@ -126,10 +126,21 @@ fi
 # Enable bash completion for build scripts.
 source ~/trunk/src/scripts/bash_completion
 
-export PYTHONHTTPSVERIFY=0
-
 # Put your fun stuff here.
 EOF
+
+echo Creating repo wrapper
+rm /usr/bin/repo
+mkdir -p /something
+ln -s /usr/lib/python-exec/python-exec2 /something/repo
+cat >/usr/bin/repo << 'EOF'
+#!/bin/sh
+
+export PYTHONHTTPSVERIFY=0
+
+exec /something/repo $@
+EOF
+chmod +x /usr/bin/repo
 
 echo Adding EMC certificates
 cat >>/etc/ssl/certs/ca-certificates.crt << 'EOF'
