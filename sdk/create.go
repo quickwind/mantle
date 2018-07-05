@@ -129,7 +129,7 @@ source ~/trunk/src/scripts/bash_completion
 # Put your fun stuff here.
 EOF
 
-# Add EMC certificates
+echo Adding EMC certificates
 cat >>/etc/ssl/certs/ca-certificates.crt << 'EOF'
 -----BEGIN CERTIFICATE-----
 MIIDajCCAlKgAwIBAgIQDnpJf/sai2ikg8QrEDRcejANBgkqhkiG9w0BAQUFADA9
