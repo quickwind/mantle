@@ -126,6 +126,8 @@ fi
 # Enable bash completion for build scripts.
 source ~/trunk/src/scripts/bash_completion
 
+export PYTHONHTTPSVERIFY=0
+
 # Put your fun stuff here.
 EOF
 
